@@ -23,9 +23,9 @@ public class KthSmallestElement {
     static int ans = 0, count = 0;
 
     public static void main(String[] args) {
-        TreeNode root = TreeNode.getTree(new int[]{5, 3, 7, 1, 4, 6, 8});
+        TreeNode root = TreeNode.getTree(new int[] { 5, 3, 7, 1, 4, 6, 8 });
         BST.inorder(root);
-        System.out.println(kthSmallest(root,7));
+        System.out.println(kthSmallest(root, 7));
     }
 
     public static int kthSmallest(TreeNode root, int k) {
@@ -34,10 +34,12 @@ public class KthSmallestElement {
     }
 
     public static void findKthElement(TreeNode root, int k) {
-        if (root == null) return;
+        if (root == null)
+            return;
         findKthElement(root.left, k);
         count++;
-        if (count == k) ans = root.val;
+        if (count == k)
+            ans = root.val;
         findKthElement(root.right, k);
 
     }

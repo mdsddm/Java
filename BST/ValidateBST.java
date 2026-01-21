@@ -24,7 +24,7 @@ The number of nodes in the tree is in the range [1, 104].
  */
 public class ValidateBST {
     public static void main(String[] args) {
-        TreeNode root = TreeNode.getTree(new int[]{5, 3, 7, 1, 4, 6, 8});
+        TreeNode root = TreeNode.getTree(new int[] { 5, 3, 7, 1, 4, 6, 8 });
         TreeNode.printTree(root);
 
         System.out.println(isValidBST(root) ? "\nvalid Tree" : "\ninvalid Tree");
@@ -35,11 +35,13 @@ public class ValidateBST {
     }
 
     public static boolean isValid(TreeNode root, TreeNode min, TreeNode max) {
-        if (root == null) return true;
+        if (root == null)
+            return true;
 
-        if (min != null && root.val <= min.val) return false;
-        else if (max != null && root.val >= max.val) return false;
-
+        if (min != null && root.val <= min.val)
+            return false;
+        else if (max != null && root.val >= max.val)
+            return false;
 
         return isValid(root.left, min, root) && isValid(root.right, root, max);
     }

@@ -20,8 +20,8 @@ Output: [8,9,9,9,0,0,0,1]
  */
 public class AddTwoNumber {
     public static void main(String[] args) {
-        ListNode first = LL.getList(new int[]{9,9,9,9,9,9,9});
-        ListNode sec = LL.getList(new int[]{9,9,9,9});
+        ListNode first = LL.getList(new int[] { 9, 9, 9, 9, 9, 9, 9 });
+        ListNode sec = LL.getList(new int[] { 9, 9, 9, 9 });
         System.out.print("first : ");
         LL.printList(first);
         System.out.print("second : ");
