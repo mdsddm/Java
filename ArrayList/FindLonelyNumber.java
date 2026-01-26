@@ -1,5 +1,7 @@
 package ArrayList;
+
 import java.util.*;
+
 /*  2150. Find All Lonely Numbers in the Array
 You are given an integer array nums. A number x is lonely when it appears only once,
 and no adjacent numbers (i.e. x + 1 and x - 1) appear in the array.
@@ -27,19 +29,20 @@ Note that [5, 1] may also be returned.
  */
 public class FindLonelyNumber {
     public static void main(String[] args) {
-        int[] nums ={10,6,5,8};
+        int[] nums = { 10, 6, 5, 8 };
         System.out.println(findLonely(nums));
     }
+
     public static List<Integer> findLonely(int[] nums) {
         List<Integer> ans = new ArrayList<>();
-        Map<Integer,Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         // mapping
-        for (int num : nums){
-            map.put(num,map.getOrDefault(num,0)+1);
+        for (int num : nums) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
         }
         // checking
-        for(int num : nums){
-            if(map.get(num)==1 && !map.containsKey(num+1) && !map.containsKey(num-1))
+        for (int num : nums) {
+            if (map.get(num) == 1 && !map.containsKey(num + 1) && !map.containsKey(num - 1))
                 ans.add(num);
         }
         return ans;

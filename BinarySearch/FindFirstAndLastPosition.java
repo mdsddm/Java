@@ -21,13 +21,13 @@ Output: [-1,-1]
  */
 public class FindFirstAndLastPosition {
     static void main(String[] args) {
-        int[] nums = {5, 7, 7, 8, 8, 10};
+        int[] nums = { 5, 7, 7, 8, 8, 10 };
         for (int i : searchRange(nums, 8))
             System.out.print(i + " ");
     }
 
     public static int[] searchRange(int[] nums, int target) {
-        int[] ans = {-1, -1};
+        int[] ans = { -1, -1 };
         ans[0] = searchPosition(nums, target, true);
         if (ans[0] != -1)
             ans[1] = searchPosition(nums, target, false);
@@ -48,7 +48,7 @@ public class FindFirstAndLastPosition {
             else if (target < nums[mid]) {
                 high = mid - 1;
             }
-            // if  target found
+            // if target found
             else {
                 // potential answer
                 ans = mid;

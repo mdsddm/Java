@@ -1,4 +1,5 @@
 package BinarySearch;
+
 /* Problem 744
 You are given an array of characters letters that is sorted in non-decreasing order, and a character target.
 There are at least two different characters in letters.
@@ -22,21 +23,23 @@ Explanation: There are no characters in letters that is lexicographically greate
  */
 public class NextGreatestLetter {
     public static void main(String[] args) {
-        char[] letters={'x','x','y','y'};
-        System.out.print(nextGreatestChar(letters,'z'));
+        char[] letters = { 'x', 'x', 'y', 'y' };
+        System.out.print(nextGreatestChar(letters, 'z'));
 
     }
+
     public static char nextGreatestChar(char[] letters, char target) {
-        if(target>=letters[letters.length-1])
+        if (target >= letters[letters.length - 1])
             return letters[0];
-        int low=0,high= letters.length-1;
+        int low = 0, high = letters.length - 1;
         int mid;
-        while (low<=high){
-            mid=low+(high-low)/2;
-            if (letters[mid]>target)
-                high=mid-1;
+        while (low <= high) {
+            mid = low + (high - low) / 2;
+            if (letters[mid] > target)
+                high = mid - 1;
             else
-                low=mid+1;  }
+                low = mid + 1;
+        }
         return letters[low];
     }
 }
