@@ -73,6 +73,7 @@ public class PrefixProblem {
 
     private static class Node {
         Node[] child = new Node[26];
+        @SuppressWarnings("unused")
         public boolean eow;
         int freq;
 
